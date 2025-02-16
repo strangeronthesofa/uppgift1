@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Test">
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="author" content="Stefan Vik">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Datakommunikation och webbadresser</title>
+</head>
+<body>
+    <div id="wrapper">
+        <nav id="navbar">
+            <a href="index.html">Datakom. & Webbadr.</a>
+            <a href="html.html">HTML</a>
+            <a href="css.html">CSS</a>
+        </nav>
+
+        <main>
+            <h1>
+                Datakommunikation och webbadresser
+            </h1>
+            
+            <section class="question">
+                <h2>
+                    TCP & IP
+                </h2>
+                <h3>TCP/IP på sändande sidan</h3>    
+                <p>
+                    Innan någon data skickas så ser TCP:t till att att det finns en uppkoppling, vilket sker med hjälp av ett så kallat three-way handshake, vilket innebär att den skickar en förfrågan till mottagaren som i sin tur svarar och godtar 
+                    denna förfrågan om sändning till vilken ursprungssändaren bekräftar att den mottagit och därvid upprättas även uppkopplingen mellan sändaren och mottagaren. Här nedanför kan vi se ett exempel på hur denna kommunikation ser ut.
+                </p>
+                <div id="image-box">
+                    <img src="/images/threeway-handshake.png">
+                </div>
+                <p>
+                    Då datan som skickas kan vara i varierande storlek så är det även TCP:t som ansvarar för att dela upp datan i mindre segment och numrerar även segmenten så att de kan packas upp i rätt ordning vid ett senare tillfälle, 
+                    och lägger även till en checksum eller kontrollsumma för att upptäcka eventuella fel på datan. 
+                </p>
+
+                <p> När all data har blivit uppdelade i segment så kapslas den in i ett IP-paket, något som sker med hjälp av IP:t eller internet protokollet. Kortfattat så innehåller IP-paketet delvis datan som TCP:t har segmenterat och delvis 
+                    så innehåller det även avsändarens och mottagarens IP-adress. IP:t avgör sedan den bästa vägen till mottagaren på nätverke och skickar sedan iväg det till nästa hopp som antingen är en router eller en switch, som i sin tur skickar 
+                    vidare det till nästa och sedan nästa och så vidare, tills det har nått mottagaren. </p>
+
+                <h3>TCP/IP på mottagande sidan</h3>
+                <p>
+                    IP-paketen som tas emot packas först upp, så att det som blir kvar är TCP-segmentet, det är det internet protokollet gör hos mottagaren när paketet har kommit fram. TCP:t i sin tur kontrollerar först checksum, 
+                    för att se till så att det inte finns några fel, samt att det korrigerar eller ordnar segmenten så att de är i den numrerade följden och tar även bort dubletter av segmenten om några sådana skulle finnas.
+                </p>
+                <p>
+                    TCP:t skickar en bekräftelse till sändaren om att de har mottagit segmenten men om något segment saknas så skickas istället en förfrågan om att skicka om just det segmentet. När allting finns på plats så bygger TCP:t ihop datan 
+                    som skickades och skickar sedan vidare detta till applikationen, vilket kan vara exempelvis en browser eller ett fildelningsprogram. 
+                </p>
+                <p>
+                    Därefter så avslutar TCP:t själva uppkopplingen mellan sändaren och mottagaren. 
+                </p>
+                
+            </section>
+            
+            <section class="question">
+                <h2>
+                    Klient & webbserver
+                </h2>
+                <p>
+                    Klienten skickar en HTTP förfrågan, in det här fallet en GET, till webbservern för filen index.html, web servern i sin tur tar emot förfrågan och letar upp den här filen (index.html) och skickar tillbaka filen med hjälp av en 
+                    HTTP response. 
+                </p>
+                <p>
+                    Klienten eller webbläsaren kommer sedan att rendera eller läsa in HTML från filen index.html, där den då kommer hitta länkar till bland annat styles.css och example.jpg och skickar nya GET requests för respekive fil. 
+                </p>
+                <p>
+                    Webbservern kommer då att att göra en HTTP response, förhoppningsvis med statuskod 200 OK, vilket indikerar att filerna som efterfrågas finns. Klienten eller webbläsaren kommer sedan att läsa in dessa extra filer 
+                    och rendera index.html på ett sådant sätt som HTML och CSS-filen vill att den skall göra och visa example.jpg på rätt plats. 
+                </p>
+            </section>
+                
+            <section class="question">
+                <h2>
+                    URL:ns uppbyggnad
+                </h2>
+                <div id="url-box">
+                    <span>https://medieteknik.lnu.se:443/wt1/index.html#intro</span>
+                </div>
+                <p>
+                    I URL:n ovan så har vi bland annat protokollet, som i det här fallet är Hypertext Transfer Protocol Secure och skrivs https://
+                </p>
+                <p>Sen har vi medieteknik.lnu.se vilket är själva domännamnet, som är följt av :443, vilket då gör att webbläsaren går in på port 443, vilket är standardporten för HTTPS-protokollet. </p>
+                <p>/wt1/index.html är själva path:en till innehållet på sidan på servern, och slutligen så har vi då #intro som är ett sido-fragment, som man kan säga pekar till ett specifikt ställe på sidan eller kanske kan ses som ett ankare 
+                    till den delen på sidan, vad det gör är att när webbläsaren läser in url:n så kommer den automatiskt att hoppa till det sidofragmentet som har blivit definierat.</p>
+            </section>
+        </main>
+        <footer>
+            <p>
+                <a href="http://jigsaw.w3.org/css-validator/check/referer"> <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!"> </a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Test">
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="author" content="Stefan Vik">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>HTML</title>
+</head>
+<body>
+    <div id="wrapper">
+        <nav id="navbar">
+            <a href="index.html">Datakom. & Webbadr.</a>
+            <a href="html.html">HTML</a>
+            <a href="css.html">CSS</a>
+        </nav>
+
+        <main>
+            <h1>HTML</h1>
+            <section class="question">
+                <h2>Taggar & Element</h2>
+                <p>
+                    En tagg består i princip av två saker, vinkelparanteser och ett keyword eller namnet på den taggen som vi vill använda oss utav, vilket kan vara ett p för paragraph eller h1 för en huvudrubrik.
+                    Vinkelparanteserna sluter om det här nyckelordet eller namnet, och bildar taggen.
+                </p>
+                <p>
+                    Attributet i sin tur förser oss med vidare information om ett element, och definieras i en öppningstagg och består av både ett namn och ett värde. Om vi kollar på exemplet nedan så kan vi se ett tomt element, 
+                    bestående av vinkelparanteser, ett namn - i det här fallet "img" och sedan har vi namnet på attributet vilket i det här fallet är "src" och det i sin tur har tilldelats ett värde, vilket är "/images/example.jpg". 
+                </p>
+                <div id="url-box">
+                    <code>
+                        &lt;img src="/images/example.jpg"&gt;
+                    </code>
+                </div>
+                <p>
+                    Tillsammans så skapar taggen och attributet själva elementet.
+                </p>
+            </section>
+
+            
+            <section class="question">
+                <h2>Entiteter</h2>
+                <p>
+                    En entitet är en bit kod som används för att skriva ut tecken (på skärmen) som annars används inom HTML, vilket gör det möjligt att skriva exempelvis &lt; eller &gt; i klartext utan att webbläsaren tolkar det som en tagg. 
+                    Nu skrev jag förvisso att det handlar om tecken som används inom HTML, vilket inte alltid stämmer - då det även kan röra sig om andra tecken, exempelvis så kan man använda sig utav <code>&amp;copy;</code> för att skriva ut &copy;
+                    och det räknas också som en entitet, det finns självfallet fler exempel än bara copy-right, men principen är den samma att det rör sig om tecken som på ett eller annat sätt är reserverade inom HTML och därför behöver skrivas in på ett 
+                    annat sätt för att de ska kunna visas korrekt i webbläsaren.
+                </p>
+            </section>
+            
+            <section class="question">
+                <h2>Block och inline-element</h2>
+                <p>
+                    En stor skillnad mellan block-elementet och inline-elementet är att block-elementet tar upp all tillgänglig bredd, medans ett inline-element enbart tar upp den bredd som krävs av innehållet. 
+                    Ett exempel på detta är exempelvis paragraf-taggen, som är ett block-element, för varje ny paragraf-tagg så blir det ett radbyte, medan exempelvis <code><strong>&lt;strong&gt;&lt;/strong&gt;</strong></code> bara tar upp så mycket
+                    utrymme som behövs. 
+                </p>
+                <p>
+                    Så man kanske kan säga att det som skiljer dem åt är hur de beter sig i relation till innehållet på sidan samt hur de tar upp utrymme på sidan.
+                </p>
+            </section>
+        </main>
+        <footer>
+            <p>
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px"
+                        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+                        alt="Valid CSS!" />
+                    </a>
+                </p>
+        </footer>
+    
+    </div>
+</body>
+</html>

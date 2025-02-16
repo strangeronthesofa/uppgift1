@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Test">
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="author" content="Stefan Vik">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>CSS</title>
+</head>
+<body>
+    <div id="wrapper">
+        <nav id="navbar">
+            <a href="index.html">Datakom. & Webbadr.</a>
+            <a href="html.html">HTML</a>
+            <a href="css.html">CSS</a>
+        </nav>
+        
+        <main>
+            <h1>Cascading Style Sheets</h1>
+            <section class="question">
+                <h2>Regler</h2>
+                <p>
+                    En regel består av två olika delar, bland annat en selektor - det är denna som avgör vilka delar av HTML-elementet som regeln ska tillämpas på. Den andra delen av en regel är egenskaperna som i sin tur består då av delvis 
+                    egenskaperna men även ett värde. En egenskap kan exempelvis vara "background-color" som då kommer att ändra färgen på bakgrunden, och värdet till den här egenskapen blir den färg vi väljer. 
+                    
+                    <img id="css-image" src="images/css3.png">
+                    
+                </p>
+                <p>
+                    Några exempel på selektorer är bland annat element, attribut, id och klass.
+                </p>
+            </section>
+            
+            <section class="question">
+                <h2>ID & Class</h2>
+                <p>
+                    En av de större skillnaderna mellan ID och klass i CSS är nog den att ett ID enbart får förekomma en gång i en HTML-fil, medan en klass kan förekomma flera gånger, en annan skillnad som kanske är mer väsentlig än hur många gånger de 
+                    ska förekomma är att de har olika höga prioriteringar eller specificitet, ID har exempelvis ett högre specificitetsnummer än klass - vilket innebär att den kommer att den regeln kommer att appliceras om det skulle finnas en konflikt 
+                    mellan olika css-regler. Selektorn för en klass är . (punkt) medan selektorn för ett ID är # följt av respektive id- eller klass-namn. 
+                </p>
+                <p>
+                    ID kan man använda när man exempelvis ska ändra om någonting som enbart förekommer en gång per sida, exempelvis en navigationsbar/meny eller en footer, medan klassen används om man ska styla om någonting som förekommer fler än en gång
+                    och det kan exempelvis vara en knapp, "kort", divvar, bilder och så vidare. 
+                </p>
+            </section>
+        </main>
+        <footer>
+            <p>
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px"
+                        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+                        alt="Valid CSS!" />
+                    </a>
+                </p>
+        </footer>
+
+    </div>
+</body>
+</html>
