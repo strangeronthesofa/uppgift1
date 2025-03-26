@@ -34,12 +34,23 @@ body {
     justify-content: center;
 }
 
+
 #css-image{
-    height: auto;
     width: 10%;
+    height: auto;
     display: inline;
     float: left;
     padding-top: 5px;
+}
+
+
+.question {
+    background-color: #ffffff; 
+    padding: 15px; 
+    margin-bottom: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 
